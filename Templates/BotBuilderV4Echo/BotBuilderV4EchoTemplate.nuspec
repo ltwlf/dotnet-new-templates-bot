@@ -4,11 +4,12 @@
     <id>Ltwlf.BotBuilderV4.Echo</id>
     <version>0.0.1</version>
     <description>
-      Dotnet new template fot a Bot Builder V4 Echo Bot
+      Dotnet new template for a Bot Builder SDK v4 Echo Bot
     </description>
     <authors>Christian Glessner</authors>
     <projectUrl>https://github.com/ltwlf/dotnet-new-templates-bot</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/ltwlf/dotnet-new-templates-bot/master/Assets/icon.png</iconUrl>
+    <tags>Bot Template dotnet</tags>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
