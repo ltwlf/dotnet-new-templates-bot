@@ -1,2 +1,3 @@
-# dotnet-new-templates-bot
-dotnet new templates for Bot SDK 4.0
+# Dotnet new templates for Bot Builder SDK 4.0
+
+

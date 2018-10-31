@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Ltwlf.BotBuilderV4.Echo</id>
+    <version>0.0.1</version>
+    <description>
+      Dotnet new template fot a Bot Builder V4 Echo Bot
+    </description>
+    <authors>Christian Glessner</authors>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+</package>
