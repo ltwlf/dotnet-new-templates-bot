@@ -7,6 +7,8 @@
       Dotnet new template fot a Bot Builder V4 Echo Bot
     </description>
     <authors>Christian Glessner</authors>
+    <projectUrl>https://github.com/ltwlf/dotnet-new-templates-bot</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ltwlf/dotnet-new-templates-bot/master/Assets/icon.png</iconUrl>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
