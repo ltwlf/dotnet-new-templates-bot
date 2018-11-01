@@ -20,27 +20,29 @@ namespace Bot_Builder_Echo_Bot_V4
     /// <see cref="IStatePropertyAccessor{T}"/> object are created with a singleton lifetime.
     /// </summary>
     /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-2.1"/>
-    public class EchoWithCounterBot : IBot
+    public class Bot : IBot
     {
-        private readonly EchoBotAccessors _accessors;
+        private readonly ConversationState _conversationState;
+        private readonly IStatePropertyAccessor<CounterState> _counterStateAccessor;
         private readonly ILogger _logger;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EchoWithCounterBot"/> class.
+        /// Initializes a new instance of the <see cref="Bot"/> class.
         /// </summary>
         /// <param name="accessors">A class containing <see cref="IStatePropertyAccessor{T}"/> used to manage state.</param>
         /// <param name="loggerFactory">A <see cref="ILoggerFactory"/> that is hooked to the Azure App Service provider.</param>
         /// <seealso cref="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#windows-eventlog-provider"/>
-        public EchoWithCounterBot(EchoBotAccessors accessors, ILoggerFactory loggerFactory)
+        public Bot(ConversationState conversationState, ILoggerFactory loggerFactory)
         {
             if (loggerFactory == null)
             {
                 throw new System.ArgumentNullException(nameof(loggerFactory));
             }
 
-            _logger = loggerFactory.CreateLogger<EchoWithCounterBot>();
+            _logger = loggerFactory.CreateLogger<Bot>();
             _logger.LogTrace("EchoBot turn start.");
-            _accessors = accessors ?? throw new System.ArgumentNullException(nameof(accessors));
+            _conversationState = conversationState;
+            _counterStateAccessor = _conversationState.CreateProperty<CounterState>(nameof(CounterState));
         }
 
         /// <summary>
@@ -64,16 +66,16 @@ namespace Bot_Builder_Echo_Bot_V4
             if (turnContext.Activity.Type == ActivityTypes.Message)
             {
                 // Get the conversation state from the turn context.
-                var state = await _accessors.CounterState.GetAsync(turnContext, () => new CounterState());
+                var state = await _counterStateAccessor.GetAsync(turnContext, () => new CounterState());
 
                 // Bump the turn count for this conversation.
                 state.TurnCount++;
 
                 // Set the property using the accessor.
-                await _accessors.CounterState.SetAsync(turnContext, state);
+                await _counterStateAccessor.SetAsync(turnContext, state);
 
                 // Save the new turn count into the conversation state.
-                await _accessors.ConversationState.SaveChangesAsync(turnContext);
+                await _conversationState.SaveChangesAsync(turnContext);
 
                 // Echo back to the user whatever they typed.
                 var responseMessage = $"Turn {state.TurnCount}: You sent '{turnContext.Activity.Text}'\n";
