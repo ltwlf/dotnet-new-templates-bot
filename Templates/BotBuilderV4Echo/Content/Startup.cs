@@ -81,6 +81,9 @@ namespace Bot_Builder_Echo_Bot_V4
             var conversationState = new ConversationState(dataStore);
             services.AddSingleton(conversationState);
 
+            var userState = new UserState(dataStore);
+            services.AddSingleton(userState);
+
             services.AddBot<Bot>(options =>
             {
                 var secretKey = Configuration.GetSection("botFileSecret")?.Value;
@@ -111,6 +114,7 @@ namespace Bot_Builder_Echo_Bot_V4
                 };
 
                 options.State.Add(conversationState);
+                options.State.Add(userState);
             });
         }
 
