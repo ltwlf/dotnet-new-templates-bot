@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Ltwlf.BotBuilderV4.Basic</id>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <description>
       Dotnet new template for a Bot Builder SDK v4 Basic Bot
     </description>
