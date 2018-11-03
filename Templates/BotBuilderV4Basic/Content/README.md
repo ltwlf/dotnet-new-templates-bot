@@ -44,7 +44,7 @@ their bots on localhost or running remotely through a tunnel.
 - Install the Bot Framework Emulator from [here](https://aka.ms/botframework-emulator).
 ### Connect to bot using Bot Framework Emulator
 - Launch the Bot Framework Emulator
-- File -> Open bot and navigate to `BotBuilder-Samples\samples\csharp_dotnetcore\13.Basic-Bot-Template` folder
+- File -> Open bot -> and navigate to your project folder
 - Select `BotConfiguration.bot` file
 
 # Deploy this bot to Azure
