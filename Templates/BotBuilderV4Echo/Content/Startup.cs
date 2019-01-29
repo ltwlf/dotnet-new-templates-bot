@@ -112,9 +112,6 @@ namespace Bot_Builder_Echo_Bot_V4
                     logger.LogError($"Exception caught : {exception}");
                     await context.SendActivityAsync("Sorry, it looks like something went wrong.");
                 };
-
-                options.State.Add(conversationState);
-                options.State.Add(userState);
             });
         }
 
