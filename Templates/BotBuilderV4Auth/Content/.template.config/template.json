@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Christian Glessner",
+    "classifications": [ "Web", "Bot" ],
+    "name": "Bot v4 - Auth",
+    "identity": "Ltwlf.BotV4.Auth",       
+    "shortName": "bot-auth",                 
+    "tags": {
+        "language": "C#"                       
+    },
+    "sourceName": "Bot_Builder_Auth_Bot_V4",      
+    "preferNameDirectory" : true
+}

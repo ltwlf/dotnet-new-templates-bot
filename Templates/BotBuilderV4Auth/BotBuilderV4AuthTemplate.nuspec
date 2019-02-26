@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>Ltwlf.BotBuilderV4.Echo</id>
+    <id>Ltwlf.BotBuilderV4.Auth</id>
     <version>0.0.4</version>
     <description>
-      Dotnet new template for a Bot Builder SDK v4 Echo Bot
+      Dotnet new template for a Bot Builder SDK v4 Auth Bot
     </description>
     <authors>Christian Glessner</authors>
     <projectUrl>https://github.com/ltwlf/dotnet-new-templates-bot</projectUrl>

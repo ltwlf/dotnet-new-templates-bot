@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Bot_Builder_Auth_Bot_V4.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
